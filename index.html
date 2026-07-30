@@ -243,6 +243,30 @@ footer{
 
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
+  /* Membership mobile fixes */
+  #membership > div > div[style*="grid-template-columns:1fr 1fr 1fr"]{
+    grid-template-columns:1fr !important;
+  }
+  #membership [style*="display:flex;border:1px solid #D0DECE;border-radius:10px;overflow:hidden"]{
+    flex-direction:column !important;
+  }
+  #membership [style*="width:120px;flex-shrink:0"]{
+    width:100% !important;
+    flex-direction:row !important;
+    justify-content:flex-start !important;
+    gap:16px !important;
+    padding:14px 16px !important;
+    border-right:none !important;
+    border-bottom:1px solid #D0DECE !important;
+  }
+  /* reassurance bullets stack on mobile */
+  #membership [style*="display:flex;justify-content:center;gap:40px"]{
+    flex-direction:column !important;
+    gap:16px !important;
+    align-items:flex-start !important;
+    padding:20px 24px !important;
+  }
+  
   nav{padding:0 20px}
   .nav-links{display:none}
   .hero{padding:90px 20px 40px}
@@ -255,6 +279,23 @@ footer{
   .detail-content{grid-template-columns:1fr}
   .darkskin-right{display:none}
   .footer-top{grid-template-columns:1fr}
+}
+</style>
+
+<style>
+@media(max-width:600px){
+  #membership .mem-grid{grid-template-columns:1fr !important}
+  #membership [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr !important}
+  #membership [style*="display:grid;grid-template-columns:1fr 1fr 1fr"]{display:block !important}
+  #membership > div > div:nth-child(4){display:flex !important;flex-direction:column !important;gap:16px !important}
+  #membership > div > div:nth-child(4) > div{width:100% !important;min-width:unset !important}
+  .detail-grid{grid-template-columns:1fr !important}
+}
+
+/* MOBILE MEMBERSHIP FIX */
+@media(max-width:700px){
+  .mobile-mem-grid{display:block !important}
+  .mobile-mem-grid > div{margin-bottom:16px !important;width:100% !important}
 }
 </style>
 </head>
@@ -582,7 +623,7 @@ footer{
           <tr><td>Leg — Half</td><td>105</td></tr>
           <tr><td>Brazilian — Full</td><td>126</td></tr>
           <tr><td>Bikini Line</td><td>84</td></tr>
-          <tr><td>Back / Chest</td><td>158 / 105</td></tr>
+          <tr><td style="white-space:nowrap">Back / Chest</td><td style="white-space:nowrap">$158 / $105</td></tr>
           <tr><td>Abdomen / Buttocks</td><td>63</td></tr>
         </table>
       </div>
@@ -823,7 +864,7 @@ footer{
     <p style="font-size:15px;color:#5A5A48;line-height:1.8;max-width:560px;margin-bottom:48px">Choose the membership that fits your lifestyle. Every tier includes a monthly facial, a enrollment laser bonus, and exclusive member discounts — with no hidden fees and a fair cancellation policy.</p>
 
     <!-- THREE CARDS -->
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:40px">
+    <div class="mobile-mem-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:40px">
 
       <!-- GLOW -->
       <div style="background:#fff;border:1px solid #D0DECE;border-radius:12px;overflow:hidden">
